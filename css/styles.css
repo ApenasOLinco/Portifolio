@@ -103,7 +103,7 @@ ul#menu {
     overflow: hidden;
     height: 100%;
 
-    transition: filter .5s ease;
+    transition: filter var(--hover-tempo) ease;
 }
 
 #cabecalho #menu li::after, #cabecalho #menu li::before {
