@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    /* outline: solid rgba(255, 0, 0, .5) 1px; */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    /* Variáveis */
+    --press-color: rgb(191, 220, 231);
+
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Cabeçalho */
+#cabecalho {
+    background: #050318;
+    color: #6B7195;
+
+    height: 65px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#contato {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#contato img {
+    border-radius: 15%;
+    max-height: 40px;
+    margin: 0 5px;
+}
+
+#email-contato {
+    user-select: all;
+    cursor: copy;
+    transition: selection .1s ease-in-out;
+}
+
+#email-contato::selection {
+    background-color: var(--press-color);
+    color: black;
+}
+
+#cabecalho ul {
+    padding: 0;
+    user-select: none;
+}
+
+#cabecalho ul li {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 12px;
+
+    font-weight: 500;
+
+    transition: color .2s ease-out;
+}
+
+#cabecalho ul li:active {
+    color: var(--press-color);
+}
+
+ul#menu {
+    flex-grow: 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#cabecalho ul > li > * {
+    vertical-align: middle;
+}
+
+#logo {
+    height: 100%;
+}
+
+#logo img {
+    overflow: hidden;
+    height: 100%;
+
+    transition: filter .5s ease;
+}
+
+/* Hover */
+#logo:hover img {
+    filter: brightness(1.35);
+}
+
+#cabecalho #menu li:hover, #github-contato:hover {
+    color: aliceblue;
+    cursor: pointer;
+}
+
+#cabecalho #menu li::before {
+    content: '[';
+    left: -20px;
+}
+
+#cabecalho #menu li::after {
+    content: ']';
+    right: -20px;
+}
+
+#cabecalho #menu li::after, #cabecalho #menu li::before {
+    position: absolute;
+    pointer-events: none;
+    color: transparent;
+
+    transition: 
+        transform .2s ease-out,
+        color .2s ease-out;
+}
+
+#cabecalho #menu li:hover::before {
+    transform: translateX(10px);
+    color: inherit;
+}
+
+#cabecalho #menu li:hover::after {
+    transform: translateX(-10px);
+    color: inherit;
+}
