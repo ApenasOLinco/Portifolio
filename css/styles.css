@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     /* outline: solid rgba(255, 0, 0, .5) 1px; */
+    margin: 0;
 }
 
 a {
@@ -10,6 +11,7 @@ a {
 
 body {
     /* Variáveis */
+    --hover-color: rgb(125, 166, 177);
     --press-color: rgb(191, 220, 231);
 
     margin: 0;
@@ -31,19 +33,23 @@ body {
 #contato {
     display: flex;
     align-items: center;
-    height: 100%;
+    margin: 0;
+}
+
+header#cabecalho ul > #github-contato {
+    padding: 0 .3em 0 0;
+    margin: 0;
 }
 
 #contato img {
     border-radius: 15%;
     max-height: 40px;
-    margin: 0 5px;
+    margin: 0 .3em 0 0;
 }
 
 #email-contato {
     user-select: all;
     cursor: copy;
-    transition: selection .1s ease-in-out;
 }
 
 #email-contato::selection {
@@ -52,19 +58,24 @@ body {
 }
 
 #cabecalho ul {
+    height: 100%;
     padding: 0;
     user-select: none;
 }
 
 #cabecalho ul li {
+    padding: 0 1em;
     position: relative;
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
     margin: 0 12px;
 
     font-weight: 500;
 
-    transition: color .2s ease-out;
+    transition: 
+        color .2s ease-out,
+        background-color .2s ease-out;
+
 }
 
 #cabecalho ul li:active {
@@ -92,13 +103,24 @@ ul#menu {
     transition: filter .5s ease;
 }
 
+#cabecalho #menu li::after, #cabecalho #menu li::before {
+    position: absolute;
+    pointer-events: none;
+    color: transparent;
+
+    transition: 
+        transform .2s cubic-bezier(0.175, 0.885, 0.32, 1.5),
+        color .2s ease-out;
+}
+
 /* Hover */
 #logo:hover img {
     filter: brightness(1.5) hue-rotate(-10deg);
 }
 
 #cabecalho #menu li:hover, #github-contato:hover {
-    color: aliceblue;
+    background-color: var(--hover-color);
+    color: #050318;
     cursor: pointer;
 }
 
@@ -112,22 +134,12 @@ ul#menu {
     right: -20px;
 }
 
-#cabecalho #menu li::after, #cabecalho #menu li::before {
-    position: absolute;
-    pointer-events: none;
-    color: transparent;
-
-    transition: 
-        transform .2s ease-out,
-        color .2s ease-out;
-}
-
 #cabecalho #menu li:hover::before {
     transform: translateX(10px);
-    color: inherit;
+    color: var(--hover-color);
 }
 
 #cabecalho #menu li:hover::after {
     transform: translateX(-10px);
-    color: inherit;
+    color: var(--hover-color);
 }
