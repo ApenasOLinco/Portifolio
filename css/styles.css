@@ -94,7 +94,7 @@ ul#menu {
 
 /* Hover */
 #logo:hover img {
-    filter: brightness(1.35);
+    filter: brightness(1.5) hue-rotate(-10deg);
 }
 
 #cabecalho #menu li:hover, #github-contato:hover {
