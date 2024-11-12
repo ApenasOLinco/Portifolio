@@ -1,6 +1,6 @@
 *, *::after, *::before {
     box-sizing: border-box;
-    outline: solid rgba(255, 0, 0, .5) 1px;
+    /* outline: solid rgba(255, 0, 0, .5) 1px; */
     margin: 0;
 }
 
@@ -72,7 +72,7 @@ header#cabecalho ul > #github-contato {
     cursor: copy;
 }
 
-#email-contato::selection {
+::selection {
     background-color: var(--select-cor);
     color: black;
 }
