@@ -257,6 +257,13 @@ h1 {
     text-shadow: black 2px 2px;
 }
 
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: 500;
+}
+
 h3 {
     font-size: 20px;
     font-weight: 800;
@@ -315,9 +322,6 @@ section {
     text-indent: 0;
 }
 
-#projetos .split-cont {
-}
-
 #projetos .split-cont div {
     display: flex;
     flex-direction: column;
@@ -332,13 +336,13 @@ section {
 }
 
 #projetos .split-cont div h3 {
-    text-align: center;
+    text-align: start;
 }
 
 #projetos .split-cont div img {
     width: 100%;
     height: 30rem;
-    margin: auto;
+    margin: 1rem 0;
     object-fit: cover;
     border-radius: 1rem;
 }
@@ -349,3 +353,36 @@ section {
 
 /*=====  End of Projetos  ======*/
 
+
+
+/*=============================================
+=                 competencias                =
+=============================================*/
+
+#competencias {
+    margin: 0 0 2rem 0;
+    padding: 2rem;
+    border-radius: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th {
+    color: var(--destaque-cor);
+}
+
+th, td {
+    border: var(--texto-cor) solid 2px;
+    padding: .5rem;
+    text-align: center;
+}
+
+/*=====  End of competencias  ======*/
