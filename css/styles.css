@@ -11,10 +11,10 @@ a {
 
 body {
     --select-cor: var(--destaque-cor);
-    --main-background: #635985;
-    --cabecalho-texto-cor: #635985;
+    --main-background: #18122B;
+    --cabecalho-texto-cor: #9586c9;
     --cabecalho-cor: #18122B;
-    --texto-cor: #020202;
+    --texto-cor: #ffffff;
     --texto-cor-hover: #acacac;
     --texto-cor-active: #f5f4f7;
     --hover-cor: var(--texto-cor-hover);
@@ -54,7 +54,6 @@ body {
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 50px;
-    font-weight: 900;
 }
 
 #banner img {
@@ -241,23 +240,112 @@ ul#menu {
 
 
 /* Main */
+
 main {
     color: var(--texto-cor);
     background-color: var(--main-background);
 }
 
 h1 {
+    font-weight: 900;
     font-size: 40px;
     text-align: center;
+
+    margin: 20px 0;
+    
+    color: var(--texto-cor);
+    text-shadow: black 2px 2px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: initial 0 20px 0; 
 }
 
 p {
-    margin: 1rem 0;
+    margin: .5rem 0 .5rem 0;
+    text-align: justify;
     text-align: justify;
     text-indent: 1rem;
     line-height: 1.5rem;
+    color: var(--texto-cor);
 }
 
-/* Sobre mim */
-#sobre-mim {
-}    
+section a {
+    color: var(--destaque-cor);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+section a:hover {
+    filter:brightness(1.1);
+}
+
+section {
+    margin: .5rem .5rem 1rem .5rem;
+    padding: 0 1rem;
+    border: var(--cabecalho-texto-cor) solid 2px;
+    border-radius: 1rem;
+}
+
+/*=============================================
+=                  Sobre Mim                  =
+=============================================*/
+
+.split-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.split {
+    display: inline-block;
+    width: 45%;
+}
+
+/*=====  End of Sobre Mim  ======*/
+
+
+
+/*=============================================
+=                  Projetos                   =
+=============================================*/
+
+#projetos p {
+    text-indent: 0;
+}
+
+#projetos .split-cont {
+}
+
+#projetos .split-cont div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: var(--cabecalho-texto-cor) solid 2px;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1rem;
+    width: 30%;
+    margin: 1rem;
+    overflow: hidden;
+}
+
+#projetos .split-cont div h3 {
+    text-align: center;
+}
+
+#projetos .split-cont div img {
+    width: 100%;
+    height: 30rem;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+#img-codigo {
+    object-position: left;
+}
+
+/*=====  End of Projetos  ======*/
+
