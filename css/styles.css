@@ -4,10 +4,11 @@
     margin: 0;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+
+
+/*=============================================
+=                Main style                   =
+=============================================*/
 
 body {
     --select-cor: var(--destaque-cor);
@@ -38,11 +39,36 @@ body {
     color: black;
 }
 
+main {
+    color: var(--texto-cor);
+    background-color: var(--main-background);
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+p {
+    margin: 1rem 0;
+    text-align: justify;
+    text-indent: 1rem;
+    line-height: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 #banner {
     position: relative;
     display: flex;
     justify-content: center;
     overflow: hidden;
+
+    opacity: 0;
+    animation: appear 1s ease-out forwards;
 }
 
 #banner h1 {
@@ -72,7 +98,8 @@ body {
     height: 100%;
     z-index: 1;
     background-color: transparent;
-    backdrop-filter: blur(4px) brightness(.8);
+    
+    animation: blur 2s forwards ease;
 }
 
 
@@ -81,6 +108,8 @@ body {
 =============================================*/
 
 #cabecalho {
+    --menu-roll-time: 1.5s;
+    
     background: var(--cabecalho-cor);
     color: var(--cabecalho-texto-cor);
 
@@ -90,6 +119,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    animation: menu-roll-ltr var(--menu-roll-time) ease-out forwards;
 }
 
 #contato {
@@ -122,20 +153,21 @@ header#cabecalho ul > #github-contato {
 }
 
 #cabecalho ul li {
+    --roll-ttb-duration: 1s;
     position: relative;
-    
     padding: 0 1em;
-    
     display: flex;
     align-items: center;
     height: 100%;
-
     font-size: 20px;
     font-weight: 500;
     text-wrap: nowrap;
-
-    transition: 
-        color var(--hover-tempo) ease-out;
+    
+    translate: 0 -100%;
+    transition: color var(--hover-tempo) ease-out;
+    animation:
+        menu-roll-ttb var(--roll-ttb-duration) ease-out forwards,
+        appear var(--roll-ttb-duration) ease-out forwards;
 }
 
 ul#menu {
@@ -240,24 +272,44 @@ ul#menu {
 
 
 
-/* Main */
-main {
-    color: var(--texto-cor);
-    background-color: var(--main-background);
+/*=============================================
+=                 Animations                  =
+=============================================*/
+
+@keyframes menu-roll-ltr {
+    0% {
+        translate: -100% 0;
+    }
+    
+    100% {
+        translate: 0;
+    }
 }
 
-h1 {
-    font-size: 40px;
-    text-align: center;
+@keyframes menu-roll-ttb {
+    0% {
+        translate: 0 -100%;
+    }
+
+    100% {
+        translate: 0;
+    }
 }
 
-p {
-    margin: 1rem 0;
-    text-align: justify;
-    text-indent: 1rem;
-    line-height: 1.5rem;
+@keyframes appear {
+    100% {
+        opacity: 100%;
+    }
 }
 
-/* Sobre mim */
-#sobre-mim {
-}    
+@keyframes blur {
+    0% {
+        backdrop-filter: none;
+    }
+
+    100% {
+        backdrop-filter: blur(5px) brightness(.8);
+    }
+}
+
+/*=====  End of Animations  ======*/
