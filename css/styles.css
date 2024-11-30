@@ -86,7 +86,7 @@ a {
     display: flex;
     align-items: center;
     margin: 0;
-}
+};
 
 #github-contato {
     padding: 0 1em;
@@ -117,7 +117,7 @@ a {
     display: flex;
     align-items: center;
     height: 100%;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     text-wrap: nowrap;
     
@@ -193,7 +193,7 @@ ul#menu {
     position: absolute;
     flex: 1;
     
-    font-family: monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
     font-weight: 900;
 
