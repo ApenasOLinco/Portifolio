@@ -1,3 +1,3 @@
 import * as hs from './homescreen.js';
 
-hs.delayAnimations()
+document.addEventListener('DOMContentLoaded' , hs.delayAnimations)

@@ -1,4 +1,7 @@
-export function delayAnimations() { 
+/**
+ * Adiciona delay a todas as animações do menu para uma experiência mais suave ao acessar a página
+ */
+export function delayAnimations() {
     /*=============================================
     =                  HEADER                    =
     =============================================*/
@@ -18,7 +21,6 @@ export function delayAnimations() {
         currentLi.style.animationDelay = `${delay}s`
     }
     
-    
     /*=============================================
     =                   BANNER                    =
     =============================================*/
@@ -28,20 +30,8 @@ export function delayAnimations() {
     const bannerAppearDuration = Number(getComputedStyle(banner).getPropertyValue('--appearDuration').replace('s', ''))
     banner.style.animationDelay = `${totalMenuAnimationDurationSec}s`
     
-    // BANNER IMG
+    /* BANNER IMG */
     const bannerImg = document.querySelector('#banner img')
     bannerImg.style.transition = `filter ${bannerAppearDuration}s ease-out`
-    console.log(getComputedStyle(bannerImg).transition)
     setTimeout(() => bannerImg.classList.add('blurry'), (bannerAppearDuration + totalMenuAnimationDurationSec) * 1000)
-
-    
-    /*=============================================
-    =                H1 ANIMATION                 =
-    =============================================*/
-
-    
-
-    /*=====  End of H1 ANIMATION  ======*/
-    
-    
 }
