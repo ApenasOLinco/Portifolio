@@ -88,9 +88,8 @@ a {
     margin: 0;
 }
 
-header#cabecalho ul > #github-contato {
-    padding: 0 .3em;
-    margin: 0;
+#github-contato {
+    padding: 0 1em;
     color: var(--destaque-cor);
 }
 
